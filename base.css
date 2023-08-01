@@ -15,18 +15,32 @@ body {
 }
 main {
 	width: 100vw;
-	height: 100vh;
+	height: 95vh;
 	display: flex;
 	flex-direction: row;
-	gap: 10px;
-	overflow: scroll;
+	justify-content: center;
+	gap: 1px;
 	flex-wrap: wrap;
+	overflow-y: scroll;
+	position: relative;
+}
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 5vh;
+	width: 100vw;
+	background-color: var(--Color1);
+	gap: 10px;
+	position: fixed;
 }
 .LaCarta {
 	height: 50vh;
 	width: max-content;
 	display: flex;
 	flex-direction: column;
+	margin: 5px;
 }
 .LaCarta img {
 	height: 50vh;
@@ -46,9 +60,10 @@ main {
 	right: -175px;
 }
 .OtroNombre {
+	display: none;
 	align-self: center;
 	position: relative;
-	bottom: 45px;
+	bottom: 55px;
 	left: 0px;
 }
 
