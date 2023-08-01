@@ -1,0 +1,71 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--Color1: #406082;
+	--Color2: #ff4727;
+	--Color3: #672d60;
+	--COlor4: #fffbfa;
+	font-family: "Roboto", sans-serif;
+}
+body {
+	background-color: var(--Color3);
+}
+main {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	overflow: scroll;
+	flex-wrap: wrap;
+}
+.LaCarta {
+	height: 50vh;
+	width: max-content;
+	display: flex;
+	flex-direction: column;
+}
+.LaCarta img {
+	height: 50vh;
+}
+.TipoCarta {
+	display: none;
+	width: max-content;
+	position: relative;
+	bottom: 75px;
+	left: 20px;
+}
+.Rareza {
+	display: none;
+	width: max-content;
+	position: relative;
+	bottom: 95px;
+	right: -175px;
+}
+.OtroNombre {
+	align-self: center;
+	position: relative;
+	bottom: 45px;
+	left: 0px;
+}
+
+@media only screen and (max-width: 500px) {
+	main {
+		justify-content: center;
+	}
+	.TipoCarta,
+	.Rareza,
+	.OtroNombre {
+		font-size: small;
+	}
+	.Rareza {
+		right: -150px;
+		bottom: 90px;
+	}
+	.OtroNombre {
+		bottom: 75px;
+	}
+}
