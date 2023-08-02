@@ -45,42 +45,9 @@ footer {
 .LaCarta img {
 	height: 50vh;
 }
-.TipoCarta {
-	display: none;
-	width: max-content;
-	position: relative;
-	bottom: 75px;
-	left: 20px;
-}
-.Rareza {
-	display: none;
-	width: max-content;
-	position: relative;
-	bottom: 95px;
-	right: -175px;
-}
-.OtroNombre {
-	display: none;
-	align-self: center;
-	position: relative;
-	bottom: 55px;
-	left: 0px;
-}
 
 @media only screen and (max-width: 500px) {
-	main {
-		justify-content: center;
-	}
-	.TipoCarta,
-	.Rareza,
-	.OtroNombre {
-		font-size: small;
-	}
-	.Rareza {
-		right: -150px;
-		bottom: 90px;
-	}
-	.OtroNombre {
-		bottom: 75px;
+	footer input {
+		width: 25vw;
 	}
 }

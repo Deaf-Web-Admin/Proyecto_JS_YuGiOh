@@ -1,16 +1,16 @@
 const HTMLdeFooter = () => {
-	return `<input type=number class="Quantity"/><button class="Pintar">Mostrar</div>`;
+	return `<input type=number class="Quantity1" placeholder="Desde"/><input type=number class="Quantity2"placeholder="Hasta"/><button class="Pintar">Mostrar</div>`;
 };
 
 const HTMLdeMain = () => {
-	return `<!--div class="container"></div-->`;
+	return ``;
 };
 
-const getCharacters = async (Qty) => {
+const getCharacters = async (Qty1, Qty2) => {
 	const data = await fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php");
 	const result = await data.json();
 	const characters = result.data;
-	const limitedCharacters = characters.slice(0, Qty);
+	const limitedCharacters = characters.slice(Qty1, Qty2);
 	printCharacters(limitedCharacters);
 };
 
@@ -23,11 +23,6 @@ const printCharacters = (list) => {
 				<div class="LaImagen">
 				<img src="${character.card_images[0].image_url}" />
 				</div>
-				<div class="TipoCarta"></div>
-				<div class="Rareza"></div>
-				<div class="OtroNombre"></div>
-				</div>
-
     `;
 		container.appendChild(div);
 	}
@@ -36,23 +31,14 @@ const printCharacters = (list) => {
 const Main = () => {
 	document.querySelector("main").innerHTML = HTMLdeMain();
 	document.querySelector("footer").innerHTML = HTMLdeFooter();
-	getCharacters(0);
+	getCharacters(0, 0);
 	const myBtn = document.querySelector(".Pintar");
-	const myInput = document.querySelector(".Quantity");
-	//Le damos funcionalidad al botón
+	const myInput1 = document.querySelector(".Quantity1");
+	const myInput2 = document.querySelector(".Quantity2");
 	myBtn.addEventListener("click", () => {
 		document.querySelector("main").innerHTML = "";
-		getCharacters(myInput.value);
+		getCharacters(myInput1.value, myInput2.value);
 	});
 };
 
 Main();
-
-//data.card_images.image_url
-//data is object, carrd_images is obj
-//https://images.ygoprodeck.com/images/cards/34541863.jpg
-//data.type                   Spell Card
-//data.card_sets.set_name     Force of the Breaker
-//data.card_sets.set_rarity   Common
-//console.log(character.card_images[0].image_url);
-//console.log(character.type);
